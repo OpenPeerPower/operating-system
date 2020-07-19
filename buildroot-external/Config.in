@@ -1,0 +1,7 @@
+source "$BR2_EXTERNAL_OPPOS_PATH/package/oppio/Config.in"
+source "$BR2_EXTERNAL_OPPOS_PATH/package/libapparmor/Config.in"
+source "$BR2_EXTERNAL_OPPOS_PATH/package/apparmor/Config.in"
+source "$BR2_EXTERNAL_OPPOS_PATH/package/bluetooth-bcm43xx/Config.in"
+source "$BR2_EXTERNAL_OPPOS_PATH/package/bluetooth-rtl8723/Config.in"
+source "$BR2_EXTERNAL_OPPOS_PATH/package/hardkernel-boot/Config.in"
+source "$BR2_EXTERNAL_OPPOS_PATH/package/qemu-guest-agent/Config.in"

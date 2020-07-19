@@ -1,0 +1,16 @@
+menuconfig BR2_PACKAGE_OPPIO
+	bool "Supervisor App"
+	help
+	  This is the Application layer they build the
+	  data partition with configurations.
+
+	  https://github.com/open-peer-power/supervisor
+
+if BR2_PACKAGE_OPPIO
+
+config BR2_PACKAGE_OPPIO_ARCH
+	string "Supervisor Arch"
+	help
+	  Supervisor architecture which should be pull.
+
+endif
