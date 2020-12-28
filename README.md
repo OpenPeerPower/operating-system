@@ -6,10 +6,10 @@ This is a embedded Linux which work different as a normal Linux distribution. Th
 ## Focus
 
 - Barebox as bootloader on EFI
-- U-Boot as bootloader on IoT
+- U-Boot as bootloader
 - Linux/Buildroot LTS
 - RAUC for OTA updates
 - SquashFS LZ4 as filesystem
 - Docker-CE
 - AppArmor protected
-- ZRAM LZ4 for /tmp, /var, swap
+- ZRAM LZ4 for `/tmp`, `/var` and swap

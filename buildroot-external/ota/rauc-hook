@@ -17,7 +17,7 @@ fi
 
 # Handle spl install
 if [ "${RAUC_SLOT_CLASS}" = "spl" ]; then
-    DEVICE_CHILD="$(findfs LABEL="oppos-boot")"
+    DEVICE_CHILD="$(findfs LABEL="hassos-boot")"
     DEVICE_ROOT="/dev/$(lsblk -no pkname ${DEVICE_CHILD})"
 
     if sfdisk -dq ${DEVICE_ROOT} | grep -q 'label: gpt'; then

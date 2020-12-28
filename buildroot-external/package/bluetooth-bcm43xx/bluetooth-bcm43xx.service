@@ -10,4 +10,4 @@ Type=forking
 ExecStart=/usr/bin/btuart
 
 [Install]
-WantedBy=oppos-hardware.target
+WantedBy=hassos-hardware.target

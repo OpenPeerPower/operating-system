@@ -1,14 +1,14 @@
-menuconfig BR2_PACKAGE_OPPIO
+menuconfig BR2_PACKAGE_HASSIO
 	bool "Supervisor App"
 	help
 	  This is the Application layer they build the
 	  data partition with configurations.
 
-	  https://github.com/open-peer-power/supervisor
+	  https://github.com/home-assistant/supervisor
 
-if BR2_PACKAGE_OPPIO
+if BR2_PACKAGE_HASSIO
 
-config BR2_PACKAGE_OPPIO_ARCH
+config BR2_PACKAGE_HASSIO_ARCH
 	string "Supervisor Arch"
 	help
 	  Supervisor architecture which should be pull.

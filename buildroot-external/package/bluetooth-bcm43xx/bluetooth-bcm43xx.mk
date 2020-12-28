@@ -6,8 +6,8 @@
 
 BLUETOOTH_BCM43XX_VERSION = 1.0.0
 BLUETOOTH_BCM43XX_LICENSE = Apache License 2.0
-BLUETOOTH_BCM43XX_LICENSE_FILES = $(BR2_EXTERNAL_OPPOS_PATH)/../LICENSE
-BLUETOOTH_BCM43XX_SITE = $(BR2_EXTERNAL_OPPOS_PATH)/package/bluetooth-bcm43xx
+BLUETOOTH_BCM43XX_LICENSE_FILES = $(BR2_EXTERNAL_HASSOS_PATH)/../LICENSE
+BLUETOOTH_BCM43XX_SITE = $(BR2_EXTERNAL_HASSOS_PATH)/package/bluetooth-bcm43xx
 BLUETOOTH_BCM43XX_SITE_METHOD = local
 
 define BLUETOOTH_BCM43XX_BUILD_CMDS
@@ -21,7 +21,7 @@ define BLUETOOTH_BCM43XX_BUILD_CMDS
 endef
 
 define BLUETOOTH_BCM43XX_INSTALL_TARGET_CMDS
-	$(INSTALL) -d $(TARGET_DIR)/etc/systemd/system/oppos-hardware.target.wants
+	$(INSTALL) -d $(TARGET_DIR)/etc/systemd/system/hassos-hardware.target.wants
 	$(INSTALL) -m 0644 $(@D)/bluetooth-bcm43xx.service $(TARGET_DIR)/usr/lib/systemd/system/
 	$(INSTALL) -m 0644 $(@D)/bthelper@.service $(TARGET_DIR)/usr/lib/systemd/system/
 

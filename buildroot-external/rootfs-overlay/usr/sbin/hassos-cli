@@ -1,0 +1,21 @@
+#!/bin/sh
+# ==============================================================================
+# Run logging cli
+# ==============================================================================
+
+# Run CLI container
+if [ "$(docker ps -q -f name=hassio_cli)" ]; then
+    docker container exec \
+        -ti hassio_cli \
+        /usr/bin/cli.sh \
+
+    # Jump to root login shell
+    if [ $? -eq 10 ]; then
+        /bin/ash -l
+    fi
+else
+    echo "[ERROR] Somethings going wrong! Jump into emergency console..."
+    /bin/ash -l
+fi
+
+exit

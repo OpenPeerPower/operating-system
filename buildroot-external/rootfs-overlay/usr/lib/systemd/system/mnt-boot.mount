@@ -1,0 +1,13 @@
+[Unit]
+Description=HassOS boot partition
+DefaultDependencies=no
+Before=umount.target local-fs.target
+Conflicts=umount.target
+
+[Mount]
+What=/dev/disk/by-label/hassos-boot
+Where=/mnt/boot
+Type=auto
+
+[Install]
+WantedBy=local-fs.target

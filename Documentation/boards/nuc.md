@@ -45,7 +45,7 @@ Bluetooth is untested.
 
 Currently there is no shiny installation method. Checklist:
 - Boot PC to live-environment using PXE or USB
-- Copy or download the oppos image into your live environment
+- Copy or download the hassos image into your live environment
 - zcat the image to local harddisk
 - Reboot
 

@@ -1,0 +1,19 @@
+[Unit]
+Description=HassOS supervisor
+Requires=docker.service
+Wants=network-online.target
+After=docker.service rauc.service dbus.socket network-online.target
+RequiresMountsFor=/mnt/data
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5s
+ExecStartPre=-/usr/bin/docker stop hassio_supervisor
+ExecStart=/usr/sbin/hassos-supervisor
+ExecStop=-/usr/bin/docker stop hassio_supervisor
+
+[Install]
+WantedBy=multi-user.target

@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2155
 
-function oppos_pre_image() {
+function hassos_pre_image() {
     local BOOT_DATA="$(path_boot_dir)"
     local SPL_IMG="$(path_spl_img)"
 
@@ -24,6 +24,6 @@ function oppos_pre_image() {
 }
 
 
-function oppos_post_image() {
+function hassos_post_image() {
     convert_disk_image_gz
 }
