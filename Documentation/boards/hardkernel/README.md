@@ -15,7 +15,7 @@ See separate documentation for each board.
 
 ### Wi-Fi
 
-The following devices have been tested on Home Assistant OS 5.8:
+The following devices have been tested on Open Peer Power OS 5.8:
 
 - [Bluetooth Module 2](https://www.hardkernel.com/shop/bluetooth-module-2/)
 - [WiFi Module 3](https://www.hardkernel.com/shop/wifi-module-3/)

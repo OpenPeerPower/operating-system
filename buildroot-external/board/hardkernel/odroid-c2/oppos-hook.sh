@@ -21,7 +21,7 @@ function oppos_pre_image() {
 }
 
 
-function hassos_post_image() {
+function oppos_post_image() {
     convert_disk_image_xz
 }
 

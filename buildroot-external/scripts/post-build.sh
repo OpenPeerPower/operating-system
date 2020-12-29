@@ -2,10 +2,10 @@
 # shellcheck disable=SC1090
 set -e
 
-SCRIPT_DIR=${BR2_EXTERNAL_HASSOS_PATH}/scripts
+SCRIPT_DIR=${BR2_EXTERNAL_OPPOS_PATH}/scripts
 BOARD_DIR=${2}
 
-. "${BR2_EXTERNAL_HASSOS_PATH}/meta"
+. "${BR2_EXTERNAL_OPPOS_PATH}/meta"
 . "${BOARD_DIR}/meta"
 
 . "${SCRIPT_DIR}/rootfs-layer.sh"
@@ -13,22 +13,22 @@ BOARD_DIR=${2}
 . "${SCRIPT_DIR}/rauc.sh"
 
 
-# HassOS tasks
+# OppOS tasks
 fix_rootfs
 install_tini_docker
-install_hassos_cli
+install_oppos_cli
 
 # Write os-release
 # shellcheck disable=SC2153
 (
-    echo "NAME=\"${HASSOS_NAME}\""
-    echo "VERSION=\"$(hassos_version) (${BOARD_NAME})\""
-    echo "ID=${HASSOS_ID}"
-    echo "VERSION_ID=$(hassos_version)"
-    echo "PRETTY_NAME=\"${HASSOS_NAME} $(hassos_version)\""
-    echo "CPE_NAME=cpe:2.3:o:home_assistant:${HASSOS_ID}:$(hassos_version):*:${DEPLOYMENT}:*:*:*:${BOARD_ID}:*"
-    echo "HOME_URL=https://hass.io/"
-    echo "VARIANT=\"${HASSOS_NAME} ${BOARD_NAME}\""
+    echo "NAME=\"${OPPOS_NAME}\""
+    echo "VERSION=\"$(oppos_version) (${BOARD_NAME})\""
+    echo "ID=${OPPOS_ID}"
+    echo "VERSION_ID=$(oppos_version)"
+    echo "PRETTY_NAME=\"${OPPOS_NAME} $(oppos_version)\""
+    echo "CPE_NAME=cpe:2.3:o:open_peer_power:${OPPOS_ID}:$(oppos_version):*:${DEPLOYMENT}:*:*:*:${BOARD_ID}:*"
+    echo "HOME_URL=https://opp.io/"
+    echo "VARIANT=\"${OPPOS_NAME} ${BOARD_NAME}\""
     echo "VARIANT_ID=${BOARD_ID}"
     echo "SUPERVISOR_MACHINE=${SUPERVISOR_MACHINE}"
     echo "SUPERVISOR_ARCH=${SUPERVISOR_ARCH}"

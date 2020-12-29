@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Envelope ovf:version="1.0" xml:lang="en-US" xmlns="http://schemas.dmtf.org/ovf/envelope/1" xmlns:ovf="http://schemas.dmtf.org/ovf/envelope/1" xmlns:rasd="http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_ResourceAllocationSettingData" xmlns:vssd="http://schemas.dmtf.org/wbem/wscim/1/cim-schema/2/CIM_VirtualSystemSettingData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vbox="http://www.virtualbox.org/ovf/machine" xmlns:vmw="http://www.vmware.com/schema/ovf">
   <References>
-    <File ovf:id="file1" ovf:href="home-assistant.vmdk"/>
+    <File ovf:id="file1" ovf:href="open-peer-power.vmdk"/>
   </References>
   <DiskSection>
     <Info>List of the virtual disks used in the package</Info>
@@ -13,13 +13,13 @@
       <Description>Logical network used by this appliance.</Description>
     </Network>
   </NetworkSection>
-  <VirtualSystem ovf:id="HomeAssistant">
+  <VirtualSystem ovf:id="OpenPeerPower">
     <Info>A virtual machine</Info>
-    <Name>Home Assistant</Name>
+    <Name>Open Peer Power</Name>
     <ProductSection>
       <Info>Meta-information about the installed software</Info>
-      <Product>Home Assistant Operating System</Product>
-      <ProductUrl>https://www.home-assistant.io</ProductUrl>
+      <Product>Open Peer Power Operating System</Product>
+      <ProductUrl>https://www.open-peer-power.io</ProductUrl>
     </ProductSection>
     <OperatingSystemSection ovf:id="100" vmw:osType="other4xLinux64Guest">
       <Info>The kind of installed guest operating system</Info>
@@ -30,7 +30,7 @@
       <System>
         <vssd:ElementName>Virtual Hardware Family</vssd:ElementName>
         <vssd:InstanceID>0</vssd:InstanceID>
-        <vssd:VirtualSystemIdentifier>Home Assistant</vssd:VirtualSystemIdentifier>
+        <vssd:VirtualSystemIdentifier>Open Peer Power</vssd:VirtualSystemIdentifier>
         <vssd:VirtualSystemType>vmx-10</vssd:VirtualSystemType>
       </System>
       <Item>
@@ -111,7 +111,7 @@
       <vmw:ExtraConfig ovf:required="false" vmw:key="usb:0.port" vmw:value="0"/>
       <vmw:ExtraConfig ovf:required="false" vmw:key="usb:0.parent" vmw:value="-1"/>
     </VirtualHardwareSection>
-    <vbox:Machine ovf:required="false" version="1.16-windows" uuid="{cab1600e-df75-47c2-a237-cfb10215b42b}" name="Home Assistant" OSType="Linux_64">
+    <vbox:Machine ovf:required="false" version="1.16-windows" uuid="{cab1600e-df75-47c2-a237-cfb10215b42b}" name="Open Peer Power" OSType="Linux_64">
       <ovf:Info>Complete VirtualBox machine configuration in VirtualBox format</ovf:Info>
       <Hardware>
         <CPU count="2"/>

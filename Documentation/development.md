@@ -8,7 +8,7 @@
 - hybrid
 - mbr
 
-HassOS is using GPT. But to use GPT we need own the first 1024 of boot drive. Is that's not possible, you can use MBR for your device. This also work with SPLs.
+OppOS is using GPT. But to use GPT we need own the first 1024 of boot drive. Is that's not possible, you can use MBR for your device. This also work with SPLs.
 
 Hybrid and SPL use both a hybrid MBR/GPT table but SPL move the GPT header 8 MB for give space to write SPL and boot images before.
 

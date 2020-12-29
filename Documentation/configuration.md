@@ -2,7 +2,7 @@
 
 ## Automatic
 
-You can use an USB drive with HassOS to configure network options, SSH access to the host and to install updates.
+You can use an USB drive with OppOS to configure network options, SSH access to the host and to install updates.
 Format a USB stick with FAT32/EXT4/NTFS and name it `CONFIG` (in all capitals). Alternative you can create a `CONFIG` folder inside the `boot` partition. Use the following directory structure within the USB drive:
 
 ```text
@@ -12,19 +12,19 @@ modprobe/
 udev/
 authorized_keys
 timesyncd.conf
-hassos-xy.raucb
+oppos-xy.raucb
 ```
 
 - The `network` folder can contain any kind of NetworkManager connection files. For more information see [Network][network.md].
 - The `modules` folder is for modules-load configuration files.
 - The `modprobe` folder is for modules configuration files (/etc/modprobe.d)
 - The `udev` folder is for udev rules files.
-- The `authorized_keys` file activates debug SSH access on port `22222`. See [Debugging Home Assistant][debug-homeassistant].
-- The `timesyncd.conf` file allow you to set different NTP servers. HassOS won't boot without correct working time servers!
-- The `hassos-*.raucb` file is a firmware OTA update which will be installed. These can be found on on the [release][hassos-release] page.
+- The `authorized_keys` file activates debug SSH access on port `22222`. See [Debugging Open Peer Power][debug-openpeerpower].
+- The `timesyncd.conf` file allow you to set different NTP servers. OppOS won't boot without correct working time servers!
+- The `oppos-*.raucb` file is a firmware OTA update which will be installed. These can be found on on the [release][oppos-release] page.
 
 You can put this USB stick into the device and it will be read on startup and files written to the correct places. You can also trigger this process later over the
-API/UI or by calling `systemctl restart hassos-config` on the host. *The USB Stick just needs to be inserted to the device during this setup process and can be disconnected afterwards.*
+API/UI or by calling `systemctl restart oppos-config` on the host. *The USB Stick just needs to be inserted to the device during this setup process and can be disconnected afterwards.*
 
 ## Local
 
@@ -58,5 +58,5 @@ FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 2.pool.ntp.org 3.pool.ntp.org
 
 [systemd-modules]: https://www.freedesktop.org/software/systemd/man/modules-load.d.html
 [network.md]: network.md
-[hassos-release]: https://github.com/home-assistant/hassos/releases/
-[debug-homeassistant]: https://developers.home-assistant.io/docs/operating-system/debugging
+[oppos-release]: https://github.com/open-peer-power/oppos/releases/
+[debug-openpeerpower]: https://developers.open-peer-power.io/docs/operating-system/debugging

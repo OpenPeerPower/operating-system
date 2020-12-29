@@ -1,6 +1,6 @@
 # Network
 
-Home Assistant Operating System uses NetworkManager to control the host network.
+Open Peer Power Operating System uses NetworkManager to control the host network.
 
 ## Configure network
 
@@ -110,24 +110,24 @@ powersave=0
 
 ## Using `nmcli` to set a static IPv4 address
 
-Log into the the HassOS base system via a console:
+Log into the the OppOS base system via a console:
 
 ```bash
-Welcome to Home Assistant
-homeassistant login:
+Welcome to Open Peer Power
+openpeerpower login:
 ```
 
 - Login as `root` (no password needed). At the `ha >` prompt, type `login` (as instructed).
 
 From there you use the `nmcli` configuration tool.
 
-- `# nmcli con show` will list the "HassOS default" connection in use.
-- `# nmcli con show "HassOS default"` will list all the properties of the connection.
+- `# nmcli con show` will list the "OppOS default" connection in use.
+- `# nmcli con show "OppOS default"` will list all the properties of the connection.
 
-To start editing the configuration setting for "HassOS default":
+To start editing the configuration setting for "OppOS default":
 
 ```bash
-# nmcli con edit "HassOS default"
+# nmcli con edit "OppOS default"
 ```
 
 To add your static IP address (select 'yes' for manual method);

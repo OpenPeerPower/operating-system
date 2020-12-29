@@ -4,8 +4,8 @@ set -e
 ARCH=
 MACHINE=
 DATA_IMG="/export/data.ext4"
-VERSION_URL="https://version.home-assistant.io/stable.json"
-APPARMOR_URL="https://version.home-assistant.io/apparmor.txt"
+VERSION_URL="https://version.open-peer-power.io/stable.json"
+APPARMOR_URL="https://version.open-peer-power.io/apparmor.txt"
 
 # Parse
 while [[ $# -gt 0 ]]; do
@@ -26,13 +26,13 @@ while [[ $# -gt 0 ]]; do
     shift
 done
 
-SUPERVISOR="homeassistant/${ARCH}-hassio-supervisor"
-DNS="homeassistant/${ARCH}-hassio-dns"
-AUDIO="homeassistant/${ARCH}-hassio-audio"
-CLI="homeassistant/${ARCH}-hassio-cli"
-MULTICAST="homeassistant/${ARCH}-hassio-multicast"
-OBSERVER="homeassistant/${ARCH}-hassio-observer"
-LANDINGPAGE="homeassistant/${MACHINE}-homeassistant:landingpage"
+SUPERVISOR="openpeerpower/${ARCH}-oppio-supervisor"
+DNS="openpeerpower/${ARCH}-oppio-dns"
+AUDIO="openpeerpower/${ARCH}-oppio-audio"
+CLI="openpeerpower/${ARCH}-oppio-cli"
+MULTICAST="openpeerpower/${ARCH}-oppio-multicast"
+OBSERVER="openpeerpower/${ARCH}-oppio-observer"
+LANDINGPAGE="openpeerpower/${MACHINE}-openpeerpower:landingpage"
 
 SUPERVISOR_VERSION=$(curl -s ${VERSION_URL} | jq -e -r '.supervisor')
 DNS_VERSION=$(curl -s ${VERSION_URL} | jq -e -r '.dns')
@@ -43,7 +43,7 @@ OBSERVER_VERSION=$(curl -s ${VERSION_URL} | jq -e -r '.observer')
 
 # Make image
 dd if=/dev/zero of=${DATA_IMG} bs=1G count=1
-mkfs.ext4 -L "hassos-data" -E lazy_itable_init=0,lazy_journal_init=0 ${DATA_IMG}
+mkfs.ext4 -L "oppos-data" -E lazy_itable_init=0,lazy_journal_init=0 ${DATA_IMG}
 
 # Setup local user
 if [ "${BUILDER_UID:0}" -ne 0 ] && [ "${BUILDER_GID:0}" -ne 0 ]; then
@@ -87,7 +87,7 @@ docker pull "${LANDINGPAGE}"
 
 # Setup AppArmor
 mkdir -p "/mnt/data/supervisor/apparmor"
-curl -sL -o "/mnt/data/supervisor/apparmor/hassio-supervisor" "${APPARMOR_URL}"
+curl -sL -o "/mnt/data/supervisor/apparmor/oppio-supervisor" "${APPARMOR_URL}"
 
 # Finish
 kill $DOCKER_PID && wait $DOCKER_PID

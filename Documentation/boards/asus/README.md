@@ -13,7 +13,7 @@
 
 eMMC support is provided with the same image. Just flash the image to the eMMC by connecting your Tinker Board S to your PC via Micro-USB. Refer to the Tinkerboard documentation how-to flash using Micro-USB and UMS.
 
-The Home Assistant OS provided U-Boot does support UMS as well,
+The Open Peer Power OS provided U-Boot does support UMS as well,
 however manual intervention is necessary:
 
  1. Set the jumper between Micro-USB and HDMI the maskrom mode
@@ -24,7 +24,7 @@ however manual intervention is necessary:
 ```
 ums 0 mmc 0
 ```
- 6. A mass storage device should appear. Flash Home Assistant OS to it.
+ 6. A mass storage device should appear. Flash Open Peer Power OS to it.
 
 ## Serial console
 

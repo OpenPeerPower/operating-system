@@ -1,7 +1,7 @@
 VERSION_MAJOR=6
 VERSION_BUILD=0
 
-HASSOS_NAME="Home Assistant OS"
-HASSOS_ID="hassos"
+OPPOS_NAME="Open Peer Power OS"
+OPPOS_ID="oppos"
 
 DEPLOYMENT="development"

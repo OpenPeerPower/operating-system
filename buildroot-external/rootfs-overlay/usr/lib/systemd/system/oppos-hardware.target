@@ -1,5 +1,5 @@
 [Unit]
-Description=HassOS hardware targets
+Description=OppOS hardware targets
 Documentation=man:systemd.target(5)
 
 [Install]

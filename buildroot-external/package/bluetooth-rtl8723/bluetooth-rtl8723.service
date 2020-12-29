@@ -8,4 +8,4 @@ Type=forking
 ExecStart=/usr/sbin/bluetooth-rtl8723
 
 [Install]
-WantedBy=hassos-hardware.target
+WantedBy=oppos-hardware.target

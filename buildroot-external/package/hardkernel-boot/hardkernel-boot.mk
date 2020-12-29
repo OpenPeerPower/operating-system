@@ -38,9 +38,9 @@ HARDKERNEL_BOOT_VERSION = 2a4e31e3fde9bced8a150d338aa397a0362df191
 
 HARDKERNEL_BOOT_BINS += u-boot.sm1
 define HARDKERNEL_BOOT_BUILD_CMDS
-	curl -L -o $(@D)/fip/blx_fix.sh https://raw.githubusercontent.com/home-assistant/operating-system-blobs/75fa51f44221da614a717673a27bec4fa01ccd6c/hardkernel/blx_fix_g12a.sh
-	curl -L -o $(@D)/fip/acs.bin https://raw.githubusercontent.com/home-assistant/operating-system-blobs/75fa51f44221da614a717673a27bec4fa01ccd6c/hardkernel/odroid-c4/acs.bin
-	curl -L -o $(@D)/fip/bl301.bin https://raw.githubusercontent.com/home-assistant/operating-system-blobs/75fa51f44221da614a717673a27bec4fa01ccd6c/hardkernel/odroid-c4/bl301.bin
+	curl -L -o $(@D)/fip/blx_fix.sh https://raw.githubusercontent.com/open-peer-power/operating-system-blobs/75fa51f44221da614a717673a27bec4fa01ccd6c/hardkernel/blx_fix_g12a.sh
+	curl -L -o $(@D)/fip/acs.bin https://raw.githubusercontent.com/open-peer-power/operating-system-blobs/75fa51f44221da614a717673a27bec4fa01ccd6c/hardkernel/odroid-c4/acs.bin
+	curl -L -o $(@D)/fip/bl301.bin https://raw.githubusercontent.com/open-peer-power/operating-system-blobs/75fa51f44221da614a717673a27bec4fa01ccd6c/hardkernel/odroid-c4/bl301.bin
 
 	bash $(@D)/fip/blx_fix.sh \
 		$(@D)/fip/g12a/bl30.bin $(@D)/fip/zero_tmp $(@D)/fip/bl30_zero.bin \
@@ -100,9 +100,9 @@ HARDKERNEL_BOOT_VERSION = ca5bdd0f1c291d1ec135cd134e01aa2619203d4c
 
 HARDKERNEL_BOOT_BINS += u-boot.g12b
 define HARDKERNEL_BOOT_BUILD_CMDS
-	curl -L -o $(@D)/fip/blx_fix.sh https://raw.githubusercontent.com/home-assistant/operating-system-blobs/f17a8e81e0b7e1bd2475441465cc737c0891edfa/hardkernel/blx_fix_g12a.sh
-	curl -L -o $(@D)/fip/acs.bin https://raw.githubusercontent.com/home-assistant/operating-system-blobs/f17a8e81e0b7e1bd2475441465cc737c0891edfa/hardkernel/odroid-n2/acs.bin
-	curl -L -o $(@D)/fip/bl301.bin https://raw.githubusercontent.com/home-assistant/operating-system-blobs/f17a8e81e0b7e1bd2475441465cc737c0891edfa/hardkernel/odroid-n2/bl301.bin
+	curl -L -o $(@D)/fip/blx_fix.sh https://raw.githubusercontent.com/open-peer-power/operating-system-blobs/f17a8e81e0b7e1bd2475441465cc737c0891edfa/hardkernel/blx_fix_g12a.sh
+	curl -L -o $(@D)/fip/acs.bin https://raw.githubusercontent.com/open-peer-power/operating-system-blobs/f17a8e81e0b7e1bd2475441465cc737c0891edfa/hardkernel/odroid-n2/acs.bin
+	curl -L -o $(@D)/fip/bl301.bin https://raw.githubusercontent.com/open-peer-power/operating-system-blobs/f17a8e81e0b7e1bd2475441465cc737c0891edfa/hardkernel/odroid-n2/bl301.bin
 
 	bash $(@D)/fip/blx_fix.sh \
 		$(@D)/fip/g12b/bl30.bin $(@D)/fip/zero_tmp $(@D)/fip/bl30_zero.bin \

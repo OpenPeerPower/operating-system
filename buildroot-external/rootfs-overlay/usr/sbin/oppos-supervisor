@@ -1,7 +1,7 @@
 #!/bin/sh
 # shellcheck disable=SC1091
 # ==============================================================================
-# Supervisor on HassOS
+# Supervisor on OppOS
 # ==============================================================================
 set -e
 
@@ -10,17 +10,17 @@ set -e
 
 # Init supervisor
 SUPERVISOR_STARTUP_MARKER="/run/supervisor/startup-marker"
-SUPERVISOR_IMAGE="homeassistant/${SUPERVISOR_ARCH}-hassio-supervisor"
+SUPERVISOR_IMAGE="openpeerpower/${SUPERVISOR_ARCH}-oppio-supervisor"
 SUPERVISOR_DATA=/mnt/data/supervisor
 SUPERVISOR_IMAGE_ID=$(docker images --no-trunc --filter "reference=${SUPERVISOR_IMAGE}:latest" --format "{{.ID}}" || echo "")
-SUPERVISOR_CONTAINER_ID=$(docker inspect --format='{{.Image}}' hassio_supervisor || echo "")
+SUPERVISOR_CONTAINER_ID=$(docker inspect --format='{{.Image}}' oppio_supervisor || echo "")
 
 # Check if previous run left the startup-marker in place. If so, we assume the
 # Container image or container is somehow corrupted.
 # Delete the container, delete the image, pull a fresh one
 if [ -f "${SUPERVISOR_STARTUP_MARKER}" ]; then
     echo "[WARNING] Supervisor container did not remove the startup marker file. Assuming container image or container corruption."
-    docker container rm --force hassio_supervisor || true
+    docker container rm --force oppio_supervisor || true
     SUPERVISOR_CONTAINER_ID=""
     # Make sure we delete all supervisor images
     SUPERVISOR_IMAGE_IDS=$(docker images --no-trunc --filter "reference=${SUPERVISOR_IMAGE}" --format "{{.ID}}" | uniq || echo "")
@@ -58,7 +58,7 @@ fi
 # Image changed, remove previous container
 if [ -n "${SUPERVISOR_CONTAINER_ID}" ] && [ "${SUPERVISOR_IMAGE_ID}" != "${SUPERVISOR_CONTAINER_ID}" ]; then
     echo "[INFO] Supervisor image has been updated, destroying previous container..."
-    docker container rm --force hassio_supervisor || true
+    docker container rm --force oppio_supervisor || true
     SUPERVISOR_CONTAINER_ID=""
 fi
 
@@ -67,8 +67,8 @@ if [ -z "${SUPERVISOR_CONTAINER_ID}" ]; then
     echo "[INFO] Creating a new Supervisor container..."
     # shellcheck disable=SC2086
     docker container create \
-        --name hassio_supervisor \
-        --privileged --security-opt apparmor="hassio-supervisor" \
+        --name oppio_supervisor \
+        --privileged --security-opt apparmor="oppio-supervisor" \
         -v /var/run/docker.sock:/var/run/docker.sock \
         -v /var/run/dbus:/var/run/dbus \
         -v /run/supervisor:/run/os:rw \
@@ -77,7 +77,7 @@ if [ -z "${SUPERVISOR_CONTAINER_ID}" ]; then
         -v /mnt/overlay:/os/overlay:rw \
         -v /mnt/boot:/os/boot:rw \
         -e SUPERVISOR_SHARE=${SUPERVISOR_DATA} \
-        -e SUPERVISOR_NAME=hassio_supervisor \
+        -e SUPERVISOR_NAME=oppio_supervisor \
         -e SUPERVISOR_MACHINE=${SUPERVISOR_MACHINE} \
         "${SUPERVISOR_IMAGE}:latest"
 fi
@@ -85,4 +85,4 @@ fi
 # Run supervisor
 mkdir -p ${SUPERVISOR_DATA}
 echo "[INFO] Starting the Supervisor..."
-exec docker container start --attach hassio_supervisor
+exec docker container start --attach oppio_supervisor

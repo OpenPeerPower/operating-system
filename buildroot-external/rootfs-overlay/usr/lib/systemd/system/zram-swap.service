@@ -1,5 +1,5 @@
 [Unit]
-Description=HassOS ZRAM swap
+Description=OppOS ZRAM swap
 DefaultDependencies=no
 Before=dev-zram0.swap
 RefuseManualStart=true
@@ -7,9 +7,9 @@ RefuseManualStop=true
 
 [Service]
 Type=oneshot
-ExecStart=/usr/libexec/hassos-zram -t swap
+ExecStart=/usr/libexec/oppos-zram -t swap
 RemainAfterExit=true
 StandardOutput=null
 
 [Install]
-WantedBy=hassos-zram.target
+WantedBy=oppos-zram.target

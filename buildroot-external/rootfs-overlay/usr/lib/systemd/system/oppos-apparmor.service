@@ -1,13 +1,13 @@
 [Unit]
-Description=HassOS AppArmor
-Wants=hassos-supervisor.service
-Before=docker.service hassos-supervisor.service
+Description=OppOS AppArmor
+Wants=oppos-supervisor.service
+Before=docker.service oppos-supervisor.service
 RequiresMountsFor=/mnt/data
 
 [Service]
 Type=oneshot
 RemainAfterExit=true
-ExecStart=/usr/libexec/hassos-apparmor
+ExecStart=/usr/libexec/oppos-apparmor
 
 [Install]
 WantedBy=multi-user.target

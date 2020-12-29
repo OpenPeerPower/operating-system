@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2155
 
-function hassos_pre_image() {
+function oppos_pre_image() {
     local BOOT_DATA="$(path_boot_dir)"
     local UBOOT_SM1="${BINARIES_DIR}/u-boot.sm1"
     local SPL_IMG="$(path_spl_img)"
@@ -18,6 +18,6 @@ function hassos_pre_image() {
 }
 
 
-function hassos_post_image() {
+function oppos_post_image() {
     convert_disk_image_xz
 }

@@ -17,10 +17,10 @@ test -n "${BOOT_ORDER}" || setenv BOOT_ORDER "A B"
 test -n "${BOOT_A_LEFT}" || setenv BOOT_A_LEFT 3
 test -n "${BOOT_B_LEFT}" || setenv BOOT_B_LEFT 3
 
-# HassOS bootargs
-setenv bootargs_hassos "zram.enabled=1 zram.num_devices=3 apparmor=1 security=apparmor rootwait systemd.machine_id=${MACHINE_ID} cgroup_enable=memory fsck.repair=yes"
+# OppOS bootargs
+setenv bootargs_oppos "zram.enabled=1 zram.num_devices=3 apparmor=1 security=apparmor rootwait systemd.machine_id=${MACHINE_ID} cgroup_enable=memory fsck.repair=yes"
 
-# HassOS system A/B
+# OppOS system A/B
 setenv bootargs_a "root=PARTUUID=8d3d53e3-6d49-4c38-8349-aff6859e82fd rootfstype=squashfs ro"
 setenv bootargs_b "root=PARTUUID=a3ec664e-32ce-4665-95ea-7ae90ce9aa20 rootfstype=squashfs ro"
 
@@ -39,7 +39,7 @@ for BOOT_SLOT in "${BOOT_ORDER}"; do
       setexpr BOOT_A_LEFT ${BOOT_A_LEFT} - 1
       echo "Trying to boot slot A, ${BOOT_A_LEFT} attempts remaining. Loading kernel ..."
       if ext4load ${devtype} ${devnum}:2 ${kernel_addr_r} Image; then
-          setenv bootargs "${bootargs_hassos} ${bootargs_rpi} ${bootargs_a} rauc.slot=A"
+          setenv bootargs "${bootargs_oppos} ${bootargs_rpi} ${bootargs_a} rauc.slot=A"
       fi
     fi
   elif test "x${BOOT_SLOT}" = "xB"; then
@@ -47,7 +47,7 @@ for BOOT_SLOT in "${BOOT_ORDER}"; do
       setexpr BOOT_B_LEFT ${BOOT_B_LEFT} - 1
       echo "Trying to boot slot B, ${BOOT_B_LEFT} attempts remaining. Loading kernel ..."
       if ext4load ${devtype} ${devnum}:4 ${kernel_addr_r} Image; then
-          setenv bootargs "${bootargs_hassos} ${bootargs_rpi} ${bootargs_b} rauc.slot=B"
+          setenv bootargs "${bootargs_oppos} ${bootargs_rpi} ${bootargs_b} rauc.slot=B"
       fi
     fi
   fi
