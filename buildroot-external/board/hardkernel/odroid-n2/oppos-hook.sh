@@ -7,8 +7,7 @@ function hassos_pre_image() {
     local SPL_IMG="$(path_spl_img)"
 
     cp "${BINARIES_DIR}/boot.scr" "${BOOT_DATA}/boot.scr"
-    cp "${BOARD_DIR}/boot-env.txt" "${BOOT_DATA}/config.txt"
-    cp "${BINARIES_DIR}/meson-g12b-odroid-n2.dtb" "${BOOT_DATA}/meson-g12b-odroid-n2.dtb"
+    cp "${BINARIES_DIR}"/*.dtb "${BOOT_DATA}/"
 
     echo "console=tty0 console=ttyAML0,115200n8" > "${BOOT_DATA}/cmdline.txt"
 
@@ -20,6 +19,6 @@ function hassos_pre_image() {
 
 
 function hassos_post_image() {
-    convert_disk_image_gz
+    convert_disk_image_xz
 }
 

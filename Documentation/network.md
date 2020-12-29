@@ -1,6 +1,6 @@
 # Network
 
-HassOS uses NetworkManager to control the host network.
+Home Assistant Operating System uses NetworkManager to control the host network.
 
 ## Configure network
 
@@ -9,6 +9,8 @@ Only a manual configuration using NetworkManager connection files is supported. 
 ## Configuration examples
 
 You can read the [NetworkManager manual][nm-manual] or find many configuration examples across the internet. Keep in mind that the system is read-only. If you don't want the IP address to change on every boot, you should modify the UUID property to a generic [UUID4][uuid]. Inside the `\CONFIG\network\` directory on the USB drive or SD card, create a file called `my-network` and add the appropriate contents below:
+
+**NOTE: Please make sure to save this file with UNIX line endings (LF, and not Windows' default CRLF endings). You can do this using Notepad these days!**
 
 ### Default
 
@@ -148,6 +150,6 @@ If you now view the default connection `cat /etc/NetworkManager/system-connectio
 
 Doing a `nmcli con reload` does not always work, so restart the virtual machine or the physical system.
 
-[nm-manual]: https://developer.gnome.org/NetworkManager/stable/nm-settings.html
+[nm-manual]: https://developer.gnome.org/NetworkManager/stable/NetworkManager.conf.html
 [configuration-usb]: configuration.md
 [uuid]: https://www.uuidgenerator.net/
