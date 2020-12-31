@@ -19,7 +19,7 @@
     <ProductSection>
       <Info>Meta-information about the installed software</Info>
       <Product>Open Peer Power Operating System</Product>
-      <ProductUrl>https://www.open-peer-power.io</ProductUrl>
+      <ProductUrl>https://www.openpeerpower.io</ProductUrl>
     </ProductSection>
     <OperatingSystemSection ovf:id="100" vmw:osType="other4xLinux64Guest">
       <Info>The kind of installed guest operating system</Info>

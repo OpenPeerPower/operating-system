@@ -59,4 +59,4 @@ FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 2.pool.ntp.org 3.pool.ntp.org
 [systemd-modules]: https://www.freedesktop.org/software/systemd/man/modules-load.d.html
 [network.md]: network.md
 [oppos-release]: https://github.com/open-peer-power/oppos/releases/
-[debug-openpeerpower]: https://developers.open-peer-power.io/docs/operating-system/debugging
+[debug-openpeerpower]: https://developers.openpeerpower.io/docs/operating-system/debugging

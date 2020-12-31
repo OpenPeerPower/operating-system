@@ -4,8 +4,8 @@ set -e
 ARCH=
 MACHINE=
 DATA_IMG="/export/data.ext4"
-VERSION_URL="https://version.open-peer-power.io/stable.json"
-APPARMOR_URL="https://version.open-peer-power.io/apparmor.txt"
+VERSION_URL="https://github.com/OpenPeerPower/version/releases/download/v1.0.0/stable.json"
+APPARMOR_URL="https://github.com/OpenPeerPower/version/releases/download/v1.0.0/apparmor.txt"
 
 # Parse
 while [[ $# -gt 0 ]]; do
@@ -34,12 +34,12 @@ MULTICAST="openpeerpower/${ARCH}-oppio-multicast"
 OBSERVER="openpeerpower/${ARCH}-oppio-observer"
 LANDINGPAGE="openpeerpower/${MACHINE}-openpeerpower:landingpage"
 
-SUPERVISOR_VERSION=$(curl -s ${VERSION_URL} | jq -e -r '.supervisor')
-DNS_VERSION=$(curl -s ${VERSION_URL} | jq -e -r '.dns')
-CLI_VERSION=$(curl -s ${VERSION_URL} | jq -e -r '.cli')
-AUDIO_VERSION=$(curl -s ${VERSION_URL} | jq -e -r '.audio')
-MULTICAST_VERSION=$(curl -s ${VERSION_URL} | jq -e -r '.multicast')
-OBSERVER_VERSION=$(curl -s ${VERSION_URL} | jq -e -r '.observer')
+SUPERVISOR_VERSION=$(curl -sL ${VERSION_URL} | jq -e -r '.supervisor')
+DNS_VERSION=$(curl -sL ${VERSION_URL} | jq -e -r '.dns')
+CLI_VERSION=$(curl -sL ${VERSION_URL} | jq -e -r '.cli')
+AUDIO_VERSION=$(curl -sL ${VERSION_URL} | jq -e -r '.audio')
+MULTICAST_VERSION=$(curl -sL ${VERSION_URL} | jq -e -r '.multicast')
+OBSERVER_VERSION=$(curl -sL ${VERSION_URL} | jq -e -r '.observer')
 
 # Make image
 dd if=/dev/zero of=${DATA_IMG} bs=1G count=1

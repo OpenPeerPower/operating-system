@@ -1,6 +1,6 @@
 # Open Peer Power Operating-System
 
-Open Peer Power Operating System (formerly OppOS) is an operating system optimized for hosting [Open Peer Power](https://www.open-peer-power.io) and its [Add-ons](https://www.open-peer-power.io/addons/).
+Open Peer Power Operating System (formerly OppOS) is an operating system optimized for hosting [Open Peer Power](https://www.openpeerpower.io) and its [Add-ons](https://www.openpeerpower.io/addons/).
 
 Open Peer Power Operating System uses Docker as Container engine. It by default deploys the Open Peer Power Supervisor as a container. Open Peer Power Supervisor in turn uses the Docker container engine to control Open Peer Power Core and Add-Ons in separate containers. Open Peer Power Operating System is **not** based on a regular Linux distribution like Ubuntu. It is built using [buildroot](https://buildroot.org/) and it is optimized for running Open Peer Power, especially on single board compute (SBC) devices like the Pi, ODROID, NUC and Tinker Board (see supported hardware below).
 
@@ -24,7 +24,7 @@ See the full list and specific models [here](./Documentation/boards/README.md)
 
 ## Getting Started
 
-If you just want to use Open Peer Power the official [getting started guide](https://www.open-peer-power.io/getting-started/) and [installation instructions](https://www.open-peer-power.io/oppio/installation/) take you through how to download Open Peer Power Operating System and get it running on your machine.
+If you just want to use Open Peer Power the official [getting started guide](https://www.openpeerpower.io/getting-started/) and [installation instructions](https://www.openpeerpower.io/oppio/installation/) take you through how to download Open Peer Power Operating System and get it running on your machine.
 
 If you're interested in finding out more about Open Peer Power Operating System and how it works read on...
 
@@ -55,4 +55,4 @@ All developer documentation is in the [Documentation](./Documentation) directory
 
 The Development build GitHub Action Workflow is a manually triggered workflow
 which creates Open Peer Power OS development builds. The development builds are
-available at [os-builds.open-peer-power.io](https://os-builds.open-peer-power.io/).
+available at [os-builds.openpeerpower.io](https://os-builds.openpeerpower.io/).

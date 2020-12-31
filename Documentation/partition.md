@@ -47,7 +47,7 @@ In a Open Peer Power OS installation, the data is stored on the `/mnt/data` part
 
 The storage capacity of the external drive must be larger than the storage capacity of the existing SD card.
 
-The command needs to be run from the host console by either connecting a keyboard and monitor or making use of the [debug ssh access](https://developers.open-peer-power.io/docs/operating-system/debugging/) over port 22222. The command will not work from within an SSH add-on container.
+The command needs to be run from the host console by either connecting a keyboard and monitor or making use of the [debug ssh access](https://developers.openpeerpower.io/docs/operating-system/debugging/) over port 22222. The command will not work from within an SSH add-on container.
 
 Log in as `root` to get to the Open Peer Power CLI and then enter `login` to continue to the host.
 
