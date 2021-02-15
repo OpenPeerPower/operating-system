@@ -99,7 +99,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ${{ github.workspace }}/release/hassos_${{ matrix.board.output }}-${{ needs.validate_release.outputs.version }}.ova
+          asset_path: ${{ github.workspace }}/release/oppos_${{ matrix.board.output }}-${{ needs.validate_release.outputs.version }}.ova
           asset_name: oppos_${{ matrix.board.output }}-${{ needs.validate_release.outputs.version }}.ova
           asset_content_type: application/x-tar
 
@@ -110,7 +110,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ${{ github.workspace }}/release/hassos_${{ matrix.board.output }}-${{ needs.validate_release.outputs.version }}.qcow2.xz
+          asset_path: ${{ github.workspace }}/release/oppos_${{ matrix.board.output }}-${{ needs.validate_release.outputs.version }}.qcow2.xz
           asset_name: oppos_${{ matrix.board.output }}-${{ needs.validate_release.outputs.version }}.qcow2.xz
           asset_content_type: application/x-xz
 
@@ -154,14 +154,14 @@ jobs:
 
     steps:
     - name: Initialize git
-      uses: home-assistant/actions/helpers/git-init@master
+      uses: open-peer-power/actions/helpers/git-init@master
       with:
         name: ${{ secrets.GIT_NAME }}
         email: ${{ secrets.GIT_EMAIL }}
         token: ${{ secrets.GIT_TOKEN }}
 
-    - name: Bump Home Assistant OS dev version
-      uses: home-assistant/actions/helpers/version-push@master
+    - name: Bump Open Peer Power OS dev version
+      uses: open-peer-power/actions/helpers/version-push@master
       with:
         key: "oppos[]"
         key-description: "Open Peer Power OS"
