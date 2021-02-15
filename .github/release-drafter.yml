@@ -1,0 +1,19 @@
+categories:
+  - title: 'Open Peer Power Operating System'
+    label: 'os'
+  - title: 'Build System'
+    label: 'build'
+  - title: 'Raspberry Pi'
+    label: 'board/raspberrypi'
+  - title: 'Open Virtual Appliance'
+    label: 'board/ova'
+  - title: 'Intel NUC'
+    label: 'board/intel-nuc'
+  - title: 'Hardkernel ODROID'
+    label: 'board/odroid'
+  - title: 'ASUS Tinker'
+    label: 'board/tinker'
+template: |
+  ## Changes
+
+  $CHANGES
