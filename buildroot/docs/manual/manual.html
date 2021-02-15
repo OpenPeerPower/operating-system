@@ -3655,12 +3655,12 @@ typical packages will therefore only use a few of them.</p><div class="itemizedl
 </li><li class="listitem">
 <code class="literal">LIBFOO_INSTALL_STAGING_OPTS</code> contains the make options used to
   install the package to the staging directory. By default, the value
-  is <code class="literal">DESTDIR=$(STAGING_DIR) install</code>, which is correct for most
+  is <code class="literal">DESTDIR=$(STAGING_DIR) install/fast</code>, which is correct for most
   CMake packages. It is still possible to override it.
 </li><li class="listitem">
 <code class="literal">LIBFOO_INSTALL_TARGET_OPTS</code> contains the make options used to
   install the package to the target directory. By default, the value
-  is <code class="literal">DESTDIR=$(TARGET_DIR) install</code>. The default value is correct
+  is <code class="literal">DESTDIR=$(TARGET_DIR) install/fast</code>. The default value is correct
   for most CMake packages, but it is still possible to override it if
   needed.
 </li></ul></div><p>With the CMake infrastructure, all the steps required to build and
@@ -5382,7 +5382,7 @@ large number of commits in the series;
 </li><li class="listitem">
 deep impact of the changes in the rest of the project;
 </li><li class="listitem">
-RFC <a href="#ftn.idm5691" class="footnote" id="idm5691"><sup class="footnote">[4]</sup></a>;
+RFC <a href="#ftn.idm5695" class="footnote" id="idm5695"><sup class="footnote">[4]</sup></a>;
 </li><li class="listitem">
 whenever you feel it will help presenting your work, your choices,
   the review process, etc.
